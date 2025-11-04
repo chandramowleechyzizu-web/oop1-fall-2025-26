@@ -7,14 +7,14 @@ public  class MortgageCalculator {
    System.out.println  ( "MortgageCalculator" );
 
 
-   Scanner scanner = new Scanner (System.in) ;
+   Scanner input = new Scanner (System.in) ;
 
 
    System.out.println( "Enter loan amount (Principal P ) :  " ) ;
-   double principal = input.nextdoublen();
+   double principal = input.nextDouble();
 
    System.out.println ( "Enter annual interest rate in ( in % ) : ");
-   double annualRate = input.nextdouble();
+   double annualRate = input .nextDouble();
 
    System.out.print ( "Enter the loan term in years : " );
      int years = input.nextInt();
@@ -27,7 +27,7 @@ public  class MortgageCalculator {
       double denominator = Math .pow (1+r,n)- 1 ;
         double monthlyPayment = principal * (numerator/denominator );
 
-        System.out.prinln ( "Your monthly payment is : $" + String.format("%.2f", monyhlyPayment));
+        System.out.println ( "Your monthly payment is : $" + String.format("%.2f", monthlyPayment));
 
         input.close();
 
