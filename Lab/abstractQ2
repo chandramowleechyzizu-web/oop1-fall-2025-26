@@ -1,0 +1,50 @@
+package Lab.Abstraction;
+
+
+abstract class Employee {
+
+    String name;
+
+    
+    public Employee(String name) {
+        System.out.println("Employee constructor called");
+        this.name = name;
+    }
+
+    
+    abstract double calculateSalary();
+
+
+    public void showDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Salary: " + calculateSalary());
+    }
+}
+
+
+class FullTimeEmployee extends Employee {
+
+    double monthlySalary;
+
+    
+    public FullTimeEmployee(String name, double monthlySalary) {
+        super(name); 
+        System.out.println("FullTimeEmployee constructor called");
+        this.monthlySalary = monthlySalary;
+    
+
+    @Override
+    double calculateSalary() {
+        return monthlySalary;
+    }
+}
+
+
+public class TestEmployee {
+    public static void main(String[] args) {
+
+        Employee emp = new FullTimeEmployee("Chandramowlee Chy Zizu", 70000);
+
+        emp.showDetails();
+    }
+}
